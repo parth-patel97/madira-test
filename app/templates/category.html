@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body %}
+<section class="section-screen ">
+    <div class="">
+        <div class="container-wide">
+
+            <div class="">
+                <div class="row" style="margin-top: 10vh;">
+
+                    {% for i in cat %}
+                    <div class="col-lg-6">
+                        <a href="{% url 'shop' %}?cid={{i.id}}">
+                        <div class="dark-shade" style="border-radius: 5px; padding: 15px; margin-top: 10vh;">
+                            <div class="row">
+                                <div class="col-lg-4 offset-md-1">
+                                    <img src="{{i.category_image.url}}" class="content-desktop"
+                                        style="height: 50vh; width: auto; margin-top: -7vh;">
+                                    <center>
+                                        <img src="{{i.category_image.url}}" class="content-mobile"
+                                            style="height: 50vh; width: auto; margin-top: -7vh;">
+                                    </center>
+                                </div>
+                                <div class="col-lg-5">
+                                    <h3 class="" style="margin-top: 10vh;">{{i.category_name}}</h3>
+                                    <br>
+
+
+                                    <h5>Discover More <span>&#10230;</span></h5>
+                                    <br>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div></a>
+                    {% endfor %}
+
+
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+</section>
+
+{% endblock body %}
